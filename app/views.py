@@ -31,7 +31,19 @@ def buy(req, id):
     data = {}
     return redirect('home')
 
+
 def delete(req, id):
     item = Cart.objects.get(id=id)
     item.delete()
+    return redirect('tocart')
+
+
+def cartCount(req, num, id):
+    num = int(num)
+    item = Cart.objects.get(id=id)
+    item.count += num
+    if item.count < 0:
+        item.count = 0
+    item.summa = item.calcSumma()
+    item.save()
     return redirect('tocart')

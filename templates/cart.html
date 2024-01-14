@@ -17,18 +17,18 @@
         {% for one in tovari %}
             <tr>
                 <td>{{ one.tovar.name }}</td>
-                <td><a href="">
-                    <button>-</button>
+                <td><a href="{% url 'count' -1 one.id %}">
+                    <button class="minus">-</button>
                 </a></td>
                 <td>{{ one.count }} шт.</td>
-                <td><a href="">
-                    <button>+</button>
+                <td><a href="{% url 'count' 1 one.id %}">
+                    <button class="plus">+</button>
                 </a></td>
                 <td>{{ one.tovar.price }} р.</td>
                 <td>{{ one.tovar.discount }} %</td>
                 <td>{{ one.summa }} р.</td>
                 <td><a href="{% url 'delete' one.id %}">
-                    <button>Удалить</button></a></td>
+                    <button class="delete">Удалить</button></a></td>
             </tr>
         {% endfor %}
     </table>
