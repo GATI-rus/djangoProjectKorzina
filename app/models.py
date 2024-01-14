@@ -11,7 +11,6 @@ class Tovar(models.Model):
     def __str__(self):
         return self.name
 
-
 class Cart(models.Model):
     tovar = models.ForeignKey(Tovar, on_delete=models.CASCADE)
     count = models.IntegerField(verbose_name='Количество товаров')
