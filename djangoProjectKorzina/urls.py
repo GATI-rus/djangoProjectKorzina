@@ -21,4 +21,7 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
+    path('cart/', views.toCart, name='tocart'),
+    path('buy/<int:id>', views.buy, name='buy'),
+    path('cart/del/<int:id>/', views.delete, name='delete'),
 ]

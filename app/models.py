@@ -21,8 +21,8 @@ class Cart(models.Model):
         return self.tovar
 
 
-def calculateSumma(self):
-    return self.count * (self.tovar.price - self.tovar.discount / 100 * self.tovar.price)
+    def calcSumma(self):
+        return self.count * (self.tovar.price - self.tovar.discount / 100 * self.tovar.price)
 
 
 class Order(models.Model):
