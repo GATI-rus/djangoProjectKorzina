@@ -1,74 +1,76 @@
-/* Стили для body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-/* Стили для заголовка */
 h2 {
     color: #333;
-    text-align: center;
-    margin-top: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Стили для таблицы */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table td, table th {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-table th {
-    background-color: #f5f5f5;
-    font-weight: bold;
-}
-
-/* Стили для шапки */
-header {
-    background-color: #333;
-    padding: 10px;
 }
 
 header a {
-    color: #fff;
-    text-decoration: none;
     margin-right: 10px;
+    text-decoration: none;
+    color: #333;
 }
 
-/* Стили для кнопок */
+table.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table.cart-table td,
+table.cart-table th {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+table.cart-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
 button {
-    padding: 5px 10px;
+    padding: 10px 15px;
     border: none;
-    color: #fff;
     cursor: pointer;
-    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
 }
 
-button.minus {
-    background-color: #ff4444; /* Красный */
+button.button--primary {
+    background-color: #33c3f0;
+}
+
+button.button--secondary {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button.button--secondary:hover {
+    background-color: #45a049;
+}
+
+button.button--secondary:active {
+    background-color: #3e8e41;
 }
 
 button.plus {
-    background-color: #00C851; /* Зеленый */
+    background-color: #7dbb3e;
+}
+
+button.minus {
+    background-color: #e74c3c;
 }
 
 button.delete {
-    background-color: #ff4444; /* Красный */
+    background-color: #d35400;
 }
 
-/* Стили для объема */
-td.volume {
-    font-weight: bold;
-    color: #333;
-    font-size: 14px;
+form {
+    margin-top: 20px;
 }

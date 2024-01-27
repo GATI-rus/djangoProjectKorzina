@@ -5,33 +5,42 @@
     <meta charset="UTF-8">
     <title>Корзина</title>
     <link rel="stylesheet" href="{% static '2.css' %}">
-
+    <script src="{% static '1.js' %}" defer></script>
 </head>
 <body>
-    <h2>Корзина</h2>
-     <header>
-        <a href="{% url 'home' %}">Главная</a>
-        <a href="{% url 'tocart' %}">Корзина</a>
-    </header>
-    <table>
-        {% for one in tovari %}
-            <tr>
-                <td>{{ one.tovar.name }}</td>
-                <td><a href="{% url 'count' -1 one.id %}">
-                    <button class="minus">-</button>
-                </a></td>
-                <td>{{ one.count }} шт.</td>
-                <td><a href="{% url 'count' 1 one.id %}">
-                    <button class="plus">+</button>
-                </a></td>
-                <td>{{ one.tovar.price }} р.</td>
-                <td>{{ one.tovar.discount }} %</td>
-                <td>{{ one.summa }} р.</td>
-                <td><a href="{% url 'delete' one.id %}">
-                    <button class="delete">Удалить</button></a></td>
-            </tr>
-        {% endfor %}
-    </table>
-    <h2>Итого: {{ total }} р.</h2>
+<h2>Корзина</h2>
+<header>
+    <a href="{% url 'home' %}">Главная</a>
+    <a href="{% url 'tocart' %}">Корзина</a>
+</header>
+<table class="cart-table">
+    {% for one in tovari %}
+        <tr>
+            <td>{{ one.tovar.name }}</td>
+            <td><a href="{% url 'count' -1 one.id %}">
+                <button class="minus">-</button>
+            </a></td>
+            <td>{{ one.count }} шт.</td>
+            <td><a href="{% url 'count' 1 one.id %}">
+                <button class="plus">+</button>
+            </a></td>
+            <td>{{ one.tovar.price }} р.</td>
+            <td>{{ one.tovar.discount }} %</td>
+            <td>{{ one.summa }} р.</td>
+            <td><a href="{% url 'delete' one.id %}">
+                <button class="delete">Удалить</button>
+            </a></td>
+        </tr>
+    {% endfor %}
+</table>
+<h2>Итого: {{ total }} р.</h2>
+<button id="formbut" class="button--primary">Оформить</button>
+<div id='formvid' hidden>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ formaorder }}
+        <input type="submit" value="Отправить" class="button--secondary">
+    </form>
+</div>
 </body>
 </html>
