@@ -84,25 +84,7 @@ def cartCount(req, num, id):
     item.save()
     return redirect('tocart')
 
-# Вариант 1
-# def telegram(neworder):
-#     token = '6716144931:AAEb_gb6qe_PsSNyGOF1TITjFK1CH9Op0lY'
-#     chat = '1342409'
-#     message = neworder.user.username + ' ' + neworder.tel + ' ' + neworder.myzakaz
-#     bot = telebot.TeleBot(token)
-#     bot.send_message(chat, 'новый заказ')
-#     bot.send_message(chat, message)
-
-# Вариант 2
-# import requests
-# def telegram(neworder):
-#     token = '6318516374:AAEAhDRrQun0mbwU2zFiTVUaKBUuD81n1g4'
-#     # t.me/turtle3000_bot
-#     chat = '1186459178'
-#     message = neworder.user.username + ' ' + neworder.tel + ' ' + neworder.myzakaz
-#     url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat}&text={message}"
-#     requests.get(url)
-
+# Вариант  1
 def telegram(neworder):
     token = '6716144931:AAEb_gb6qe_PsSNyGOF1TITjFK1CH9Op0lY'
     chat = '1342409'
@@ -115,3 +97,16 @@ def telegram(neworder):
         print("Сообщение успешно отправлено")
     except Exception as e:
         print(f"Ошибка отправки сообщения: {e}")
+
+
+# Вариант 2
+# import requests
+# def telegram(neworder):
+#     token = '6318516374:AAEAhDRrQun0mbwU2zFiTVUaKBUuD81n1g4'
+#     # t.me/turtle3000_bot
+#     chat = '1186459178'
+#     message = neworder.user.username + ' ' + neworder.tel + ' ' + neworder.myzakaz
+#     url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat}&text={message}"
+#     requests.get(url)
+
+
