@@ -45,12 +45,13 @@ def toCart(req):
                 user=req.user
             )
             items.delete()
-
+            #Telegram-bot
             telegram(neworder)
 
             return render(req, 'sps.html')
     data = {'tovari': items, 'total': total, 'formaorder': forma}
     return render(req, 'cart.html', data)
+
 
 
 def buy(req, id):
